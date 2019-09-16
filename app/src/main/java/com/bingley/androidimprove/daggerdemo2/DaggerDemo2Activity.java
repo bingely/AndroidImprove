@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.bingley.androidimprove.R;
-import com.bingley.androidimprove.daggerdemo2.bean.ZhaiNan;
 
 /**
  * @author bingley
@@ -20,6 +19,6 @@ public class DaggerDemo2Activity extends AppCompatActivity {
         setContentView(R.layout.act_dagger2);
 
 
-        ZhaiNan waimai = DaggerPlatform.builder().build().waimai();
+        //ZhaiNan waimai = DaggerPlatform.builder().build().waimai();
     }
 }
