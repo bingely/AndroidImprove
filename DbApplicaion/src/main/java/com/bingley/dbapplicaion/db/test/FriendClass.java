@@ -44,4 +44,12 @@ public class FriendClass {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "FriendClass{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

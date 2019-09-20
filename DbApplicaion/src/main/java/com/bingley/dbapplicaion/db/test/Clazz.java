@@ -1,6 +1,9 @@
 package com.bingley.dbapplicaion.db.test;
 
+import com.bingley.dbapplicaion.db.test.dbconverter.StudentConverter;
+
 import org.greenrobot.greendao.DaoException;
+import org.greenrobot.greendao.annotation.Convert;
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
@@ -27,17 +30,23 @@ public class Clazz{
 
     // 一对一 注解的话
     @ToOne(joinProperty = "friendClassId")
+    // 也可以通过convert形式
     private FriendClass friendClass;
     private Long friendClassId;
-
+    // 可以是Object类型吗 不行 marked with @ToOne in class Clazz is not an entity
+    /*@ToOne(joinProperty = "objId")
+    private  Object obj;
+    private Long objId;*/
 
 
     // 一对多 注解，采用 referencedJoinProperty 方式，clazID 为学生的班级号
+    // 第一种解决方案
     @ToMany(referencedJoinProperty = "clazID")
    // @Convert(columnType = String.class, converter = StudentConverter.class)
     private List<Student> studentList;
-
-
+    // 第二种解决方案 converter
+    @Convert(columnType = String.class, converter = StudentConverter.class)
+    private List<Student> newStudentList;
 
     public String getName() {
         return this.name;
@@ -55,6 +64,20 @@ public class Clazz{
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "Clazz{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", friendClass=" + friendClass +
+                ", friendClassId=" + friendClassId +
+                ", studentList=" + studentList +
+                ", newStudentList=" + newStudentList +
+                ", daoSession=" + daoSession +
+                ", myDao=" + myDao +
+                ", friendClass__resolvedKey=" + friendClass__resolvedKey +
+                '}';
+    }
 
     /** Used to resolve relations */
     @Generated(hash = 2040040024)
@@ -67,11 +90,12 @@ public class Clazz{
     @Generated(hash = 349353470)
     private transient Long friendClass__resolvedKey;
 
-    @Generated(hash = 320359401)
-    public Clazz(Long id, String name, Long friendClassId) {
+    @Generated(hash = 107139619)
+    public Clazz(Long id, String name, Long friendClassId, List<Student> newStudentList) {
         this.id = id;
         this.name = name;
         this.friendClassId = friendClassId;
+        this.newStudentList = newStudentList;
     }
 
     @Generated(hash = 1166360579)
@@ -179,6 +203,14 @@ public class Clazz{
     @Generated(hash = 1628625923)
     public synchronized void resetStudentList() {
         studentList = null;
+    }
+
+    public List<Student> getNewStudentList() {
+        return this.newStudentList;
+    }
+
+    public void setNewStudentList(List<Student> newStudentList) {
+        this.newStudentList = newStudentList;
     }
 
     /** called by internal mechanisms, do not call yourself. */

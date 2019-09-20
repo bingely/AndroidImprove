@@ -22,20 +22,37 @@ android {
         }
     }
 
+
+    //greendao配置
+    greendao {
+        //数据库版本号，升级时修改
+        schemaVersion 4
+        //生成的DAO，DaoMaster和DaoSession的包路径。默认与表实体所在的包路径相同
+        //daoPackage 'com.dev.base.model.db'
+        //生成源文件的路径。默认源文件目录是在build目录中的(build/generated/source/greendao)
+        //targetGenDir 'src/main/java'
+    }
+
 }
 
 dependencies {
+    def room_version = "1.1.1"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':lib_base')
 
     // 数据库 greendao
     api 'org.greenrobot:greendao:3.2.2' // add library
-
+    // dbflow
     annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:${rootProject.ext.dbflowVersion}"
     implementation "com.github.Raizlabs.DBFlow:dbflow-core:${rootProject.ext.dbflowVersion}"
     implementation "com.github.Raizlabs.DBFlow:dbflow:${rootProject.ext.dbflowVersion}"
+    // room
+    implementation "android.arch.persistence.room:runtime:$room_version"
+    annotationProcessor "android.arch.persistence.room:compiler:$room_version" // use kapt for Kotlin
 
     debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+    implementation 'com.kongzue.dialog_v3:dialog:3.1.1'
 
 }
