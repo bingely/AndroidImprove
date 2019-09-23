@@ -1,4 +1,4 @@
-package com.bingley.dbapplicaion.db.test;
+package com.bingley.dbapplicaion.dbgreen.test;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;

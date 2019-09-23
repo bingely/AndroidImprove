@@ -1,4 +1,4 @@
-package com.bingley.dbapplicaion.room;
+package com.bingley.dbapplicaion.dbroom;
 
 import android.arch.persistence.room.RoomDatabase;
 

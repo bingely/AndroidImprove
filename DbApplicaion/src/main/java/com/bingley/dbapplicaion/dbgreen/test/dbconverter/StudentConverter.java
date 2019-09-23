@@ -1,6 +1,6 @@
-package com.bingley.dbapplicaion.db.test.dbconverter;
+package com.bingley.dbapplicaion.dbgreen.test.dbconverter;
 
-import com.bingley.dbapplicaion.db.test.Student;
+import com.bingley.dbapplicaion.dbgreen.test.Student;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

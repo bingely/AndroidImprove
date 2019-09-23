@@ -1,6 +1,6 @@
-package com.bingley.dbapplicaion.db.test;
+package com.bingley.dbapplicaion.dbgreen.test;
 
-import com.bingley.dbapplicaion.db.test.dbconverter.StudentConverter;
+import com.bingley.dbapplicaion.dbgreen.test.dbconverter.StudentConverter;
 
 import org.greenrobot.greendao.DaoException;
 import org.greenrobot.greendao.annotation.Convert;

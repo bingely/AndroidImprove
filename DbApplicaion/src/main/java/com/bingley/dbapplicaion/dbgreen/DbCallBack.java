@@ -1,4 +1,4 @@
-package com.bingley.dbapplicaion.db;
+package com.bingley.dbapplicaion.dbgreen;
 
 import java.util.List;
 

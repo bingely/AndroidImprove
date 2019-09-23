@@ -1,9 +1,9 @@
-package com.bingley.dbapplicaion.db;
+package com.bingley.dbapplicaion.dbgreen;
 
 import android.app.Application;
 
-import com.bingley.dbapplicaion.db.test.DaoMaster;
-import com.bingley.dbapplicaion.db.test.DaoSession;
+import com.bingley.dbapplicaion.dbgreen.test.DaoMaster;
+import com.bingley.dbapplicaion.dbgreen.test.DaoSession;
 
 import org.greenrobot.greendao.AbstractDao;
 import org.greenrobot.greendao.async.AsyncOperation;

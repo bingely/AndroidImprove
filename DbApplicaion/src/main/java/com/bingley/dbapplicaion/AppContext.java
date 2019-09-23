@@ -3,8 +3,7 @@ package com.bingley.dbapplicaion;
 import android.app.Application;
 import android.content.Context;
 
-import com.bingley.dbapplicaion.db.DbUtil;
-import com.raizlabs.android.dbflow.config.FlowManager;
+import com.bingley.dbapplicaion.dbgreen.DbUtil;
 
 /**
  * @author bingley
@@ -27,7 +26,7 @@ public class AppContext extends Application {
         // greendao
         mDbUtil = DbUtil.getInstance(this);
        // dbflow
-        FlowManager.init(this);
+       // FlowManager.init(this);
 
 
 

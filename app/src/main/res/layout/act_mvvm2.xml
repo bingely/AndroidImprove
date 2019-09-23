@@ -11,15 +11,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
+       <!-- <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{userinfo.name}"/>
 
-        <!--注意：这里age是int类型，必须转化为String，否则会运行时异常-->
+        &lt;!&ndash;注意：这里age是int类型，必须转化为String，否则会运行时异常&ndash;&gt;
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{String.valueOf(userinfo.age)}"/>
+            android:text="@{String.valueOf(userinfo.age)}"/>-->
     </LinearLayout>
 </layout>

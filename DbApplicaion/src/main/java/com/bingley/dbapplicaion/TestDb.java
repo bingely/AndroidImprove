@@ -7,21 +7,18 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.bingley.base.log.LogUtil;
-import com.bingley.dbapplicaion.db.DbCallBack;
-import com.bingley.dbapplicaion.db.DbUtil;
-import com.bingley.dbapplicaion.db.test.Clazz;
-import com.bingley.dbapplicaion.db.test.ClazzDao;
-import com.bingley.dbapplicaion.db.test.FriendClass;
-import com.bingley.dbapplicaion.db.test.Student;
-import com.bingley.dbapplicaion.db.test.StudentDao;
 import com.bingley.dbapplicaion.dbflow.AppDataBase;
 import com.bingley.dbapplicaion.dbflow.User2Model;
-import com.bingley.dbapplicaion.dbflow.User2Model_Table;
-import com.bingley.dbapplicaion.room.AppDatabase;
+import com.bingley.dbapplicaion.dbgreen.DbCallBack;
+import com.bingley.dbapplicaion.dbgreen.DbUtil;
+import com.bingley.dbapplicaion.dbgreen.test.Clazz;
+import com.bingley.dbapplicaion.dbgreen.test.ClazzDao;
+import com.bingley.dbapplicaion.dbgreen.test.FriendClass;
+import com.bingley.dbapplicaion.dbgreen.test.Student;
+import com.bingley.dbapplicaion.dbgreen.test.StudentDao;
+import com.bingley.dbapplicaion.dbroom.AppDatabase;
 import com.raizlabs.android.dbflow.config.FlowManager;
 import com.raizlabs.android.dbflow.sql.language.From;
-import com.raizlabs.android.dbflow.sql.language.NameAlias;
-import com.raizlabs.android.dbflow.sql.language.OrderBy;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.raizlabs.android.dbflow.structure.database.DatabaseWrapper;
 import com.raizlabs.android.dbflow.structure.database.transaction.ITransaction;
@@ -283,16 +280,16 @@ public class TestDb {
         List<User2Model> user2Models1 = user2ModelFrom.queryList();
 
 
-        List<User2Model> user2Models= user2ModelFrom.where(User2Model_Table.age.greaterThan(18),User2Model_Table.name.eq("UserModel"))
-                .orderBy(OrderBy.fromNameAlias(NameAlias.of("id")))
-                .groupBy(NameAlias.of("id"))
-                .queryList();
-        if (user2Models.size()!=0){
-            for (User2Model user2Model:user2Models){
-                LogUtil.e("DBFLOW","id="+user2Model.getId()+",name="+user2Model.getName()+",age="+user2Model.getAge());
-            }
-        }else{
-            LogUtil.e("DBFLOW"+"为空");
-        }
+//        List<User2Model> user2Models= user2ModelFrom.where(User2Model_Table.age.greaterThan(18),User2Model_Table.name.eq("UserModel"))
+//                .orderBy(OrderBy.fromNameAlias(NameAlias.of("id")))
+//                .groupBy(NameAlias.of("id"))
+//                .queryList();
+//        if (user2Models.size()!=0){
+//            for (User2Model user2Model:user2Models){
+//                LogUtil.e("DBFLOW","id="+user2Model.getId()+",name="+user2Model.getName()+",age="+user2Model.getAge());
+//            }
+//        }else{
+//            LogUtil.e("DBFLOW"+"为空");
+//        }
     }
 }

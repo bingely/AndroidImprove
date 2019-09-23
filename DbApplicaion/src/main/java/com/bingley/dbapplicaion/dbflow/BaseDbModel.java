@@ -11,5 +11,5 @@ import com.raizlabs.android.dbflow.structure.BaseModel;
  * @version 1.0.0
  */
 public abstract class BaseDbModel<Model> extends BaseModel
-        {
+        implements DiffUiDataCallback.UiDataDiffer<Model>{
 }

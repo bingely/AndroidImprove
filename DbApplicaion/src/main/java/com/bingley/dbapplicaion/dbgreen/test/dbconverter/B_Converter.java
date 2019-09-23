@@ -1,4 +1,4 @@
-package com.bingley.dbapplicaion.db.test.dbconverter;/*
+package com.bingley.dbapplicaion.dbgreen.test.dbconverter;/*
 package com.niaoyun.nycloud.ui.common.db.test.dbconverter;
 
 import com.google.gson.Gson;

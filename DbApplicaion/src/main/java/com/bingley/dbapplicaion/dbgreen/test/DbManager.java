@@ -1,4 +1,4 @@
-package com.bingley.dbapplicaion.db.test;
+package com.bingley.dbapplicaion.dbgreen.test;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
