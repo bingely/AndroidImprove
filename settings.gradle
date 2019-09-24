@@ -1,1 +1,1 @@
-include ':app', ':lib_net', ':rxjava', ':lib_base', ':DbApplicaion'
+include ':app', ':lib_net', ':rxjava', ':lib_base', ':DbApplicaion', ':ViewApplication'
